@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anatomical piano | Explore your musical self</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Enable GPU acceleration */
+    #parallax-img {
+        will-change: transform;
+        backface-visibility: hidden;
+        perspective: 1000;
+        transition: transform 0.1s;
+    }
+
+    /* Sprite mask */
+    .sprite-mask {
+        mask: radial-gradient(circle at var(--x, 50%) var(--y, 50%), white 80px, transparent 85px);
+    }
+
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 left-0 right-0 z-50 p-6">
+    <div class="flex justify-between items-center">
+      <!-- Logo/Brand -->
+      <div class="text-white font-serif text-xl font-bold tracking-wider">
+        ANATOMICAL PIANO
+      </div>
+      
+      <!-- Navigation Links -->
+      <div class="hidden md:flex space-x-8 text-white font-light">
+        <a href="#approach" class="hover:text-gray-300 transition-colors border-b border-transparent hover:border-white pb-1">Approach</a>
+        <a href="#story" class="hover:text-gray-300 transition-colors border-b border-transparent hover:border-white pb-1">Story</a>
+        <a href="#contact" class="hover:text-gray-300 transition-colors border-b border-transparent hover:border-white pb-1">Contact</a>
+      </div>
+      
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden text-white">
+        <button class="text-2xl">≡</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Parallax Section -->
+  <div id="hero-image" class="relative h-screen overflow-hidden">
+    <div id="sprite-mask" class="absolute inset-0 overflow-hidden">
+        <div id="parallax-img"
+         alt="Parallax"
+         class="w-full h-full relative top-0 left-0">
+        <img src="res/front.jpg" class="absolute top-0 left-1/2 -translate-x-1/2 max-w-none object-top object-center brightness-90"/>
+        <img id="back-image" src="res/back.jpg" class="sprite-mask z-10 absolute top-0 left-1/2 -translate-x-1/2 max-w-none object-top object-center brightness-90"/>
+    </div>
+    </div>
+    
+    <!-- Hero Text - Positioned to avoid hands area -->
+    <div class="absolute top-1/4 left-8 md:left-16 z-20 max-w-lg">
+      <div class="text-white">
+        <h1 class="text-4xl md:text-6xl font-bold mb-4 font-serif leading-tight">
+          Reach Piano<br>
+          <span class="text-3xl md:text-5xl font-light italic">Proficiency</span>
+        </h1>
+        <div class="w-16 h-1 bg-white mb-6"></div>
+        <p class="text-lg md:text-xl font-light mb-8 leading-relaxed">
+          <span class="italic">with Anatomical Insights</span><br><br>
+          Piano is a matter of fine deep<br>
+          sensor capacity.<br>
+          <span class="text-sm opacity-90">Experience why.</span>
+        </p>
+        <button class="bg-transparent border-2 border-white text-white px-8 py-3 font-light text-lg hover:bg-white hover:text-black transition-all duration-300 tracking-wider">
+          EXPLORE YOUR MUSICAL SELF
+        </button>
+      </div>
+    </div>
+
+    <!-- Interactive hint -->
+    <div class="absolute bottom-32 right-8 md:block hidden z-20">
+      <div class="text-white text-right" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.8);">
+        <p class="text-sm md:text-base font-light mb-2 opacity-80">
+          Move your cursor over the hands
+        </p>
+        <div class="flex justify-end items-center space-x-2">
+          <span class="text-xs opacity-60">Discover the anatomy beneath</span>
+          <div class="w-8 h-8 border border-white rounded-full flex items-center justify-center animate-pulse">
+            <div class="w-2 h-2 bg-white rounded-full"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Content Section -->
+  <div class="max-w-2xl mx-auto py-20 px-6 h-screen">
+    <h2 class="text-3xl font-semibold mb-6">Lorem Ipsum</h2>
+    <p class="text-lg leading-relaxed">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu erat lacus, vel congue mauris...
+    </p>
+  </div>
+  
+  <script src="main.js"></script>
+</body>
+</html>
